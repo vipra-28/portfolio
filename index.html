@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipra Nath Patel | Portfolio</title>
+
+    <!-- Google Fonts & Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        },
+                        dark: {
+                            bg: '#0a0d14',
+                            card: '#111726',
+                            border: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .grid-pattern {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-dark-bg text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-black min-h-screen relative overflow-x-hidden">
+
+    <!-- Ambient Glow -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="fixed bottom-0 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-dark-bg/80 border-b border-dark-border/60">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#hero" class="text-lg font-bold tracking-tight flex items-center gap-2 group">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-400 animate-pulse"></span>
+                <span class="font-mono text-slate-300 group-hover:text-brand-400 transition-colors">vipra.dev</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-brand-400 transition-colors">Tech Stack</a>
+                <a href="#projects" class="hover:text-brand-400 transition-colors">Projects</a>
+                <a href="#leadership" class="hover:text-brand-400 transition-colors">Media & Creative</a>
+                <a href="#resume" class="hover:text-brand-400 transition-colors">Resume</a>
+                <a href="#contact" class="hover:text-brand-400 transition-colors">Contact</a>
+            </div>
+
+            <!-- Action Button -->
+            <div class="hidden md:flex items-center">
+                <a href="mailto:vipranp2004@gmail.com"
+                    class="px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-brand-500 hover:bg-brand-400 text-black transition-all">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" aria-label="Toggle menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden md:hidden px-6 py-4 bg-dark-card border-b border-dark-border flex flex-col gap-4 text-sm font-medium">
+            <a href="#about" class="text-slate-300 hover:text-brand-400">About</a>
+            <a href="#skills" class="text-slate-300 hover:text-brand-400">Tech Stack</a>
+            <a href="#projects" class="text-slate-300 hover:text-brand-400">Projects</a>
+            <a href="#leadership" class="text-slate-300 hover:text-brand-400">Media & Creative</a>
+            <a href="#resume" class="text-slate-300 hover:text-brand-400">Resume</a>
+            <a href="#contact" class="text-slate-300 hover:text-brand-400">Contact</a>
+            <a href="mailto:vipranp2004@gmail.com" class="text-brand-400 font-semibold">vipranp2004@gmail.com</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-12 pb-20 md:py-28 max-w-6xl mx-auto px-6 grid-pattern">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+            <!-- Text Info -->
+            <div class="lg:col-span-7 flex flex-col items-start gap-6">
+
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-dark-border bg-dark-card/60 text-xs font-mono text-brand-400">
+                    <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                    <span>B.Tech CSE AI • 3rd Year Student</span>
+                </div>
+
+                <div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Hi, I'm <br class="hidden sm:inline" />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-emerald-300 to-cyan-400">
+                            Vipra Nath Patel
+                        </span>
+                    </h1>
+                    <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed">
+                        Specializing in Artificial Intelligence with Python as my core focus. Deputy Media Head at
+                        Alankaar BBDEG forum, passionate about storytelling through cinematography, reels, and design.
+                    </p>
+                </div>
+
+                <!-- Debugging & Lifelong Learner Tag -->
+                <div
+                    class="inline-flex flex-wrap items-center gap-2 px-3.5 py-2 rounded-xl bg-dark-card/90 border border-dark-border text-xs text-slate-300">
+                    <span class="flex items-center gap-1.5 text-brand-400 font-mono font-medium">
+                        <i data-lucide="bug-off" class="w-4 h-4 text-emerald-400"></i> Debugging Enthusiast
+                    </span>
+                    <span class="text-slate-600">•</span>
+                    <span>Solving errors brings genuine joy</span>
+                    <span class="text-slate-600">•</span>
+                    <span class="flex items-center gap-1 text-cyan-400">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Eager to learn new tech
+                    </span>
+                </div>
+
+                <!-- Quick Links / CTAs with Direct Google Doc Link -->
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/edit?usp=sharing"
+                        target="_blank" rel="noopener noreferrer"
+                        class="px-6 py-3 rounded-lg bg-brand-500 hover:bg-brand-400 text-black font-semibold text-sm transition-all flex items-center gap-2 shadow-lg shadow-brand-500/10">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        View Resume
+                    </a>
+                    <a href="#projects"
+                        class="px-6 py-3 rounded-lg border border-dark-border hover:border-slate-600 bg-dark-card text-slate-200 text-sm font-semibold transition-all">
+                        See Projects
+                    </a>
+                </div>
+
+                <!-- Social Icons Row -->
+                <div class="flex items-center gap-4 pt-4 border-t border-dark-border/80 w-full text-slate-400">
+                    <span class="text-xs font-mono uppercase tracking-widest text-slate-500">Profiles:</span>
+                    <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-white transition-colors" title="GitHub">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vipranathpatel/?isSelfProfile=true" target="_blank"
+                        rel="noopener noreferrer" class="hover:text-sky-400 transition-colors" title="LinkedIn">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.instagram.com/vipra_28/" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-pink-400 transition-colors" title="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:vipranp2004@gmail.com" class="hover:text-brand-400 transition-colors" title="Email">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Photo Display Card -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm">
+                    <div
+                        class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-brand-500 to-cyan-500 opacity-25 blur-lg">
+                    </div>
+                    <div class="relative rounded-2xl bg-dark-card border border-dark-border overflow-hidden shadow-2xl">
+                        <img src="IMG_0698.jpg" alt="Vipra Nath Patel"
+                            class="w-full h-auto object-cover max-h-[440px] hover:scale-105 transition-transform duration-500 ease-out"
+                            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';" />
+                        <div class="p-4 bg-dark-card/90 border-t border-dark-border flex items-center justify-between">
+                            <div>
+                                <p class="font-bold text-sm text-white">Vipra Nath Patel</p>
+                                <p class="text-xs text-slate-400 font-mono">B.Tech CSE (AI)</p>
+                            </div>
+                            <span
+                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-950/60 text-brand-400 border border-emerald-800/40">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span> Available
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 border-t border-dark-border/60 bg-dark-card/30">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-12">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-400">About</h2>
+                <p class="text-3xl font-bold tracking-tight text-white mt-1">Academic & Personal Profile</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Academic Profile -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-brand-400 mb-4">
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Education</h3>
+                        <p class="text-sm font-mono text-brand-400 mb-3">B.Tech CSE (AI) - 3rd Year</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Undergraduate student pursuing Computer Science and Engineering with an Artificial
+                            Intelligence specialization.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Debugging & Learning Passion -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-brand-400 mb-4">
+                            <i data-lucide="code-2" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Problem Solver</h3>
+                        <p class="text-sm font-mono text-brand-400 mb-3">Debugging & Innovation</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Nothing beats the feeling of tracking down a stubborn bug and solving errors. Passionate
+                            about exploring new frameworks and learning continuously.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Media & Interests -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-purple-950/80 border border-purple-800/40 flex items-center justify-center text-purple-400 mb-4">
+                            <i data-lucide="tv" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Interests & Hobbies</h3>
+                        <p class="text-sm font-mono text-purple-400 mb-3">Creative & Anime</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Passionate about photography, cinematography, and reel-making. Outside of coding and
+                            creative media, I am an enthusiastic anime watcher.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Stack Section -->
+    <section id="skills" class="py-20 border-t border-dark-border/60">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-12">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-400">Competencies</h2>
+                <p class="text-3xl font-bold tracking-tight text-white mt-1">Tech Stack</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Primary Stack -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 px-3 py-1 bg-brand-500/10 border-b border-l border-brand-500/20 text-brand-400 text-[11px] font-mono uppercase tracking-wider font-semibold">
+                        Primary Focus
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="terminal" class="w-5 h-5 text-brand-400"></i> Main Technology
+                    </h3>
+                    <p class="text-sm text-slate-400 mb-6">Core language utilized for algorithms, problem solving, and
+                        backend logic.</p>
+
+                    <div class="flex items-center gap-4 p-4 rounded-lg bg-dark-bg/60 border border-dark-border">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400 font-mono text-xl font-bold border border-brand-500/30">
+                            Py
+                        </div>
+                        <div>
+                            <p class="font-bold text-white text-lg">Python</p>
+                            <p class="text-xs text-slate-400">AI Specialization • Backend • Core Development</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary & Tools -->
+                <div class="p-6 rounded-xl bg-dark-card border border-dark-border">
+                    <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-emerald-400"></i> Secondary Technologies
+                    </h3>
+                    <p class="text-sm text-slate-400 mb-6">Languages, databases, and frameworks utilized across
+                        projects.</p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+
+                        <div class="p-3 rounded-lg bg-dark-bg/60 border border-dark-border text-center">
+                            <span class="block text-sm font-bold text-slate-200">FastAPI</span>
+                            <span class="text-[11px] font-mono text-slate-500">Backend</span>
+                        </div>
+
+                        <div class="p-3 rounded-lg bg-dark-bg/60 border border-dark-border text-center">
+                            <span class="block text-sm font-bold text-slate-200">MySQL</span>
+                            <span class="text-[11px] font-mono text-slate-500">Database</span>
+                        </div>
+
+                        <div class="p-3 rounded-lg bg-dark-bg/60 border border-dark-border text-center">
+                            <span class="block text-sm font-bold text-slate-200">C</span>
+                            <span class="text-[11px] font-mono text-slate-500">Core</span>
+                        </div>
+
+                        <div class="p-3 rounded-lg bg-dark-bg/60 border border-dark-border text-center">
+                            <span class="block text-sm font-bold text-slate-200">HTML</span>
+                            <span class="text-[11px] font-mono text-slate-500">Web</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Chatbot & AI Monitoring) -->
+    <section id="projects" class="py-20 border-t border-dark-border/60 bg-dark-card/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-12">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-400">Portfolio Work</h2>
+                <p class="text-3xl font-bold tracking-tight text-white mt-1">Featured Projects</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Chatbot Project -->
+                <div
+                    class="p-6 rounded-xl bg-dark-card border border-dark-border flex flex-col justify-between hover:border-brand-500/50 transition-colors">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400">
+                                <i data-lucide="bot" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">Python • FastAPI • MySQL</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Intelligent Conversational Chatbot</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Developed a conversational assistant backend using Python and FastAPI. Implemented intent
+                            handling, contextual query routing, and MySQL persistence, fine-tuned through comprehensive
+                            error troubleshooting.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-dark-border/60 flex items-center justify-between text-xs font-mono text-brand-400">
+                        <span>Conversational AI</span>
+                        <a href="https://github.com/vipra-28" target="_blank"
+                            class="hover:underline flex items-center gap-1">
+                            GitHub Repo <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AI Infrastructure Health Monitoring System -->
+                <div
+                    class="p-6 rounded-xl bg-dark-card border border-dark-border flex flex-col justify-between hover:border-brand-500/50 transition-colors">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                                <i data-lucide="activity" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">Python • AI / ML</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI Infrastructure Health Monitoring</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Engineered an AI-driven system to detect anomalies and evaluate structural health metrics.
+                            Built data preprocessing and evaluation pipelines while spearheading technical
+                            presentations.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-dark-border/60 flex items-center justify-between text-xs font-mono text-cyan-400">
+                        <span>Machine Learning</span>
+                        <a href="https://github.com/vipra-28" target="_blank"
+                            class="hover:underline flex items-center gap-1">
+                            GitHub Repo <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Leadership & Creative Experience -->
+    <section id="leadership" class="py-20 border-t border-dark-border/60">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-12">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-400">Creative & Roles</h2>
+                <p class="text-3xl font-bold tracking-tight text-white mt-1">Media Leadership</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+                <!-- Alankaar Position Card -->
+                <div class="p-6 sm:p-8 rounded-xl bg-dark-card border border-dark-border relative">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <div>
+                            <span
+                                class="inline-block px-2.5 py-1 rounded bg-brand-500/10 text-brand-400 text-xs font-mono font-semibold mb-2">
+                                Forum Leadership
+                            </span>
+                            <h3 class="text-xl font-bold text-white">Deputy Media Head</h3>
+                            <p class="text-sm font-medium text-slate-400">Alankaar BBDEG Forum</p>
+                        </div>
+                        <div class="p-3 rounded-lg bg-dark-bg border border-dark-border text-brand-400">
+                            <i data-lucide="video" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        Leading creative media operations, visual planning, and multimedia initiatives for the Alankaar
+                        forum at BBD Educational Group.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                        <span class="px-2.5 py-1 rounded bg-dark-bg border border-dark-border">Leadership</span>
+                        <span class="px-2.5 py-1 rounded bg-dark-bg border border-dark-border">Event Coverage</span>
+                        <span class="px-2.5 py-1 rounded bg-dark-bg border border-dark-border">Media Management</span>
+                    </div>
+                </div>
+
+                <!-- Creative Toolkit & Hobbies -->
+                <div class="space-y-4">
+                    <div class="p-5 rounded-xl bg-dark-card border border-dark-border flex items-start gap-4">
+                        <div class="p-2.5 rounded-lg bg-pink-950/60 text-pink-400 border border-pink-900/40 mt-1">
+                            <i data-lucide="camera" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Photography & Cinematography</h4>
+                            <p class="text-xs text-slate-400 mt-1">Visual framing, dynamic angles, camera work, and
+                                high-impact reel production.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-dark-card border border-dark-border flex items-start gap-4">
+                        <div class="p-2.5 rounded-lg bg-sky-950/60 text-sky-400 border border-sky-900/40 mt-1">
+                            <i data-lucide="palette" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Canva & Visual Design</h4>
+                            <p class="text-xs text-slate-400 mt-1">Skilled in producing promotional designs, graphics,
+                                branding materials, and event posters.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-dark-card border border-dark-border flex items-start gap-4">
+                        <div
+                            class="p-2.5 rounded-lg bg-emerald-950/60 text-emerald-400 border border-emerald-900/40 mt-1">
+                            <i data-lucide="film" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Reels & Content Production</h4>
+                            <p class="text-xs text-slate-400 mt-1">End-to-end mobile video production, pacing, audio
+                                synchronization, and editing.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section (Linked Directly to Google Doc & PDF Export) -->
+    <section id="resume" class="py-20 border-t border-dark-border/60 bg-dark-card/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-12">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-400">Qualifications</h2>
+                <p class="text-3xl font-bold tracking-tight text-white mt-1">Curriculum Vitae / Resume</p>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-dark-card border border-dark-border relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                    <div class="lg:col-span-8 space-y-4">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-500/10 text-brand-400 text-xs font-mono font-medium">
+                            <i data-lucide="cloud" class="w-3.5 h-3.5"></i> Live Cloud Synchronized
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Vipra Nath Patel — Resume</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed max-w-xl">
+                            Includes comprehensive academic credentials in B.Tech CSE (AI), technical stack experience
+                            (Python, FastAPI, MySQL, C, HTML), Chatbot & AI projects, problem-solving skills, and
+                            leadership at Alankaar BBDEG Forum.
+                        </p>
+
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <!-- Direct View in Google Docs (Always Updated) -->
+                            <a href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/edit?usp=sharing"
+                                target="_blank" rel="noopener noreferrer"
+                                class="px-5 py-2.5 rounded-lg border border-dark-border hover:border-slate-500 bg-dark-bg text-slate-300 font-semibold text-xs uppercase tracking-wider flex items-center gap-2 transition-all">
+                                <i data-lucide="external-link" class="w-4 h-4"></i> View Resume (Always Updated)
+                            </a>
+
+                            <!-- Auto-downloads Google Doc as PDF -->
+                            <a href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/export?format=pdf"
+                                target="_blank"
+                                class="px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-black font-semibold text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shadow-brand-500/10">
+                                <i data-lucide="download" class="w-4 h-4"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 flex justify-center">
+                        <div
+                            class="w-52 p-5 rounded-xl bg-dark-bg border border-dark-border flex flex-col items-center text-center shadow-lg">
+                            <div
+                                class="w-14 h-14 rounded-full bg-emerald-950/60 border border-emerald-800/40 text-brand-400 flex items-center justify-center mb-3">
+                                <i data-lucide="file-check-2" class="w-7 h-7"></i>
+                            </div>
+                            <p class="font-bold text-white text-sm">Cloud Document</p>
+                            <p class="text-[11px] font-mono text-slate-500 mt-0.5">Real-time sync</p>
+                            <span class="mt-3 text-[10px] text-slate-400 border-t border-dark-border pt-2 w-full">No
+                                file re-uploads needed</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 border-t border-dark-border/60 bg-dark-card/30">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="max-w-xl mx-auto mb-10">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-400">Get In Touch</h2>
+                <p class="text-3xl font-bold tracking-tight text-white mt-1">Connect Directly</p>
+                <p class="text-sm text-slate-400 mt-3">
+                    Feel free to reach out for software collaborations, media production projects, or technical
+                    conversations.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <a href="mailto:vipranp2004@gmail.com"
+                    class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-black font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-500/10">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    vipranp2004@gmail.com
+                </a>
+            </div>
+
+            <div class="flex items-center justify-center gap-6 mt-10 text-slate-400">
+                <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-white transition-colors flex items-center gap-2 text-xs font-mono">
+                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/vipranathpatel/?isSelfProfile=true" target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-sky-400 transition-colors flex items-center gap-2 text-xs font-mono">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                </a>
+                <a href="https://www.instagram.com/vipra_28/" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-pink-400 transition-colors flex items-center gap-2 text-xs font-mono">
+                    <i data-lucide="instagram" class="w-4 h-4"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-dark-border/60 text-center text-xs font-mono text-slate-500">
+        <p>© <span id="year"></span> Vipra Nath Patel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
