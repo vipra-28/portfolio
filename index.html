@@ -1,716 +1,651 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vipra Nath Patel | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vipra Nath Patel | Portfolio</title>
+  
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Google Fonts & Tailwind CDN -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        navy: {
-                            950: '#060a12', // Deepest background
-                            900: '#0b1324', // Surface dark card
-                            850: '#101c36', // Elevated card
-                            800: '#182b52', // Border / subtle divider
-                            700: '#233d73',
-                        },
-                        accent: {
-                            cyan: '#38bdf8', // Neon Sky
-                            blue: '#3b82f6', // Vivid Blue
-                            indigo: '#6366f1',// Deep Accent
-                            glow: 'rgba(56, 189, 248, 0.15)'
-                        }
-                    }
-                }
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              950: '#060a12', // Deepest background
+              900: '#0b1324', // Surface dark card
+              850: '#101c36', // Elevated card
+              800: '#182b52', // Border
+              700: '#233d73',
+            },
+            accent: {
+              cyan: '#38bdf8',
+              blue: '#3b82f6',
+              indigo: '#6366f1',
             }
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <style>
-        /* Custom High-Contrast Hover Styles */
-        .interactive-card {
-            transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  <style>
+    /* Interactive Hover Spotlight */
+    .interactive-card {
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .interactive-card:hover {
+      transform: translateY(-4px);
+      background-color: #121f3d !important;
+      border-color: #38bdf8 !important;
+      box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.22);
+    }
+    .interactive-card:hover h3,
+    .interactive-card:hover h4 {
+      color: #38bdf8 !important;
+    }
+    .interactive-card:hover p {
+      color: #e2e8f0 !important;
+    }
 
-        .interactive-card:hover {
-            transform: translateY(-4px);
-            background-color: #121f3d !important;
-            border-color: #38bdf8 !important;
-            box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.22);
-        }
+    /* Instagram Logo Gradient Fill */
+    .insta-gradient-bg {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
 
-        .interactive-card:hover h3,
-        .interactive-card:hover h4 {
-            color: #38bdf8 !important;
-        }
-
-        .interactive-card:hover p {
-            color: #e2e8f0 !important;
-        }
-
-        /* Ambient Tech Grid */
-        .cyber-grid {
-            background-size: 36px 36px;
-            background-image:
-                linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
-        }
-    </style>
+    /* Ambient Tech Grid */
+    .cyber-grid {
+      background-size: 36px 36px;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+    }
+  </style>
 </head>
 
-<body
-    class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-accent-cyan selection:text-navy-950 min-h-screen relative overflow-x-hidden">
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-accent-cyan selection:text-navy-950 min-h-screen relative overflow-x-hidden">
 
-    <!-- Ambient Glowing Orbs -->
-    <div
-        class="fixed top-0 left-1/4 w-[28rem] h-[28rem] bg-accent-blue/15 rounded-full blur-[120px] pointer-events-none -z-10">
+  <!-- Ambient Glowing Orbs -->
+  <div class="fixed top-0 left-1/4 w-[28rem] h-[28rem] bg-accent-blue/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-10 right-10 w-[26rem] h-[26rem] bg-accent-cyan/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md bg-navy-950/85 border-b border-navy-800">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#hero" class="text-lg font-bold tracking-tight flex items-center gap-2 group">
+        <span class="w-2.5 h-2.5 rounded-full bg-accent-cyan shadow-[0_0_8px_#38bdf8] animate-pulse"></span>
+        <span class="font-mono text-slate-200 group-hover:text-accent-cyan transition-colors">vipra.dev</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-accent-cyan hover:scale-105 transition-all">About</a>
+        <a href="#skills" class="hover:text-accent-cyan hover:scale-105 transition-all">Tech Stack</a>
+        <a href="#projects" class="hover:text-accent-cyan hover:scale-105 transition-all">Projects</a>
+        <a href="#leadership" class="hover:text-accent-cyan hover:scale-105 transition-all">Media & Creative</a>
+        <a href="#resume" class="hover:text-accent-cyan hover:scale-105 transition-all">Resume</a>
+        <a href="#contact" class="hover:text-accent-cyan hover:scale-105 transition-all">Contact</a>
+      </div>
+
+      <!-- Action Button -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="mailto:vipranp2004@gmail.com" class="px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-accent-cyan hover:bg-sky-300 text-navy-950 transition-all shadow-md shadow-accent-cyan/20 hover:shadow-accent-cyan/40 hover:-translate-y-0.5">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Toggle Navigation">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
     </div>
-    <div
-        class="fixed bottom-10 right-10 w-[26rem] h-[26rem] bg-accent-cyan/10 rounded-full blur-[140px] pointer-events-none -z-10">
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 py-5 bg-navy-900 border-b border-navy-800 flex flex-col gap-4 text-sm font-medium">
+      <a href="#about" class="text-slate-200 hover:text-accent-cyan transition-colors">About</a>
+      <a href="#skills" class="text-slate-200 hover:text-accent-cyan transition-colors">Tech Stack</a>
+      <a href="#projects" class="text-slate-200 hover:text-accent-cyan transition-colors">Projects</a>
+      <a href="#leadership" class="text-slate-200 hover:text-accent-cyan transition-colors">Media & Creative</a>
+      <a href="#resume" class="text-slate-200 hover:text-accent-cyan transition-colors">Resume</a>
+      <a href="#contact" class="text-slate-200 hover:text-accent-cyan transition-colors">Contact</a>
+      <div class="pt-3 border-t border-navy-800">
+        <a href="mailto:vipranp2004@gmail.com" class="text-accent-cyan font-mono text-xs">vipranp2004@gmail.com</a>
+      </div>
     </div>
+  </nav>
 
-    <!-- Navigation Bar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-navy-950/85 border-b border-navy-800">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-10 pb-16 sm:py-20 md:py-24 max-w-6xl mx-auto px-5 sm:px-8 cyber-grid">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      
+      <!-- Left Column: Details -->
+      <div class="lg:col-span-7 flex flex-col items-start gap-6 order-2 lg:order-1">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-navy-700 bg-navy-900/80 text-xs font-mono text-accent-cyan shadow-sm">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          <span>B.Tech CSE AI • 3rd Year Student</span>
+        </div>
 
-            <!-- Brand Logo -->
-            <a href="#hero" class="text-lg font-bold tracking-tight flex items-center gap-2 group">
-                <span class="w-2.5 h-2.5 rounded-full bg-accent-cyan shadow-[0_0_8px_#38bdf8] animate-pulse"></span>
-                <span class="font-mono text-slate-200 group-hover:text-accent-cyan transition-colors">vipra.dev</span>
+        <div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Hi, I'm <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-sky-300 to-accent-indigo">
+              Vipra Nath Patel
+            </span>
+          </h1>
+          <p class="mt-4 text-sm sm:text-base md:text-lg text-slate-300 max-w-xl leading-relaxed">
+            AI student focused on Python, backend engineering, and intelligent systems. Deputy Media Head at Alankaar BBDEG forum, bringing creative storytelling through cinematography, reels, and visual aesthetics.
+          </p>
+        </div>
+
+        <!-- Debugging & Passion Pill -->
+        <div class="interactive-card w-full sm:w-auto inline-flex flex-wrap items-center gap-2.5 px-4 py-2.5 rounded-xl bg-navy-900 border border-navy-800 text-xs text-slate-200">
+          <span class="flex items-center gap-1.5 text-accent-cyan font-mono font-medium">
+            <i data-lucide="wrench" class="w-4 h-4 text-sky-400"></i> Debugging Enthusiast
+          </span>
+          <span class="text-slate-600 hidden sm:inline">•</span>
+          <span>Solving errors genuinely makes me happy</span>
+          <span class="text-slate-600 hidden sm:inline">•</span>
+          <span class="flex items-center gap-1 text-sky-300">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Continuously Learning
+          </span>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3.5 pt-1 w-full sm:w-auto">
+          <a 
+            href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/edit?usp=sharing" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full sm:w-auto px-6 py-3 rounded-lg bg-accent-cyan hover:bg-sky-300 text-navy-950 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-accent-cyan/20 hover:shadow-accent-cyan/35 hover:-translate-y-0.5">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            View Resume
+          </a>
+          <a 
+            href="#projects" 
+            class="w-full sm:w-auto px-6 py-3 rounded-lg border border-navy-700 hover:border-accent-cyan bg-navy-900 text-slate-200 text-sm font-semibold transition-all text-center hover:-translate-y-0.5">
+            Explore Work
+          </a>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- HIGHLIGHTED OFFICIAL LOGOS: LINKEDIN & INSTA   -->
+        <!-- ============================================== -->
+        <div class="w-full pt-4 border-t border-navy-800/90">
+          <span class="text-[11px] font-mono uppercase tracking-widest text-slate-400 block mb-3 font-semibold">
+            Featured Connect:
+          </span>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
+            
+            <!-- LinkedIn Highlight Card with Official SVG Logo -->
+            <a 
+              href="https://www.linkedin.com/in/vipranathpatel/?isSelfProfile=true" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="interactive-card group p-3.5 rounded-xl bg-navy-900 border border-[#0A66C2]/40 flex items-center justify-between hover:border-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.3)] transition-all">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-lg bg-[#0A66C2] flex items-center justify-center shadow-md shadow-[#0A66C2]/30 group-hover:scale-105 transition-transform">
+                  <!-- Official LinkedIn SVG Logo -->
+                  <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white group-hover:text-accent-cyan">LinkedIn</h4>
+                  <p class="text-xs text-slate-400 font-mono">/in/vipranathpatel</p>
+                </div>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-accent-cyan transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
             </a>
 
-            <!-- Desktop Links -->
-            <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-accent-cyan hover:scale-105 transition-all">About</a>
-                <a href="#skills" class="hover:text-accent-cyan hover:scale-105 transition-all">Tech Stack</a>
-                <a href="#projects" class="hover:text-accent-cyan hover:scale-105 transition-all">Projects</a>
-                <a href="#leadership" class="hover:text-accent-cyan hover:scale-105 transition-all">Media & Creative</a>
-                <a href="#resume" class="hover:text-accent-cyan hover:scale-105 transition-all">Resume</a>
-                <a href="#contact" class="hover:text-accent-cyan hover:scale-105 transition-all">Contact</a>
-            </div>
-
-            <!-- Action Button -->
-            <div class="hidden md:flex items-center gap-3">
-                <a href="mailto:vipranp2004@gmail.com"
-                    class="px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-accent-cyan hover:bg-sky-300 text-navy-950 transition-all shadow-md shadow-accent-cyan/20 hover:shadow-accent-cyan/40 hover:-translate-y-0.5">
-                    Get in Touch
-                </a>
-            </div>
-
-            <!-- Mobile Hamburger Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2"
-                aria-label="Toggle Navigation">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu"
-            class="hidden md:hidden px-6 py-5 bg-navy-900 border-b border-navy-800 flex flex-col gap-4 text-sm font-medium">
-            <a href="#about" class="text-slate-200 hover:text-accent-cyan transition-colors">About</a>
-            <a href="#skills" class="text-slate-200 hover:text-accent-cyan transition-colors">Tech Stack</a>
-            <a href="#projects" class="text-slate-200 hover:text-accent-cyan transition-colors">Projects</a>
-            <a href="#leadership" class="text-slate-200 hover:text-accent-cyan transition-colors">Media & Creative</a>
-            <a href="#resume" class="text-slate-200 hover:text-accent-cyan transition-colors">Resume</a>
-            <a href="#contact" class="text-slate-200 hover:text-accent-cyan transition-colors">Contact</a>
-            <div class="pt-3 border-t border-navy-800">
-                <a href="mailto:vipranp2004@gmail.com"
-                    class="text-accent-cyan font-mono text-xs">vipranp2004@gmail.com</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative pt-10 pb-16 sm:py-20 md:py-24 max-w-6xl mx-auto px-5 sm:px-8 cyber-grid">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-
-            <!-- Left Column: Introduction & Details -->
-            <div class="lg:col-span-7 flex flex-col items-start gap-6 order-2 lg:order-1">
-
-                <!-- Status Pill -->
-                <div
-                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-navy-700 bg-navy-900/80 text-xs font-mono text-accent-cyan shadow-sm">
-                    <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-                    <span>B.Tech CSE AI • 3rd Year Student</span>
+            <!-- Instagram Highlight Card with Official Gradient SVG Logo -->
+            <a 
+              href="https://www.instagram.com/vipra_28/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="interactive-card group p-3.5 rounded-xl bg-navy-900 border border-pink-500/40 flex items-center justify-between hover:border-pink-500 hover:shadow-[0_0_20px_rgba(225,48,108,0.3)] transition-all">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-lg insta-gradient-bg flex items-center justify-center shadow-md shadow-pink-500/30 group-hover:scale-105 transition-transform">
+                  <!-- Official Instagram SVG Logo -->
+                  <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
                 </div>
-
                 <div>
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        Hi, I'm <br />
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-sky-300 to-accent-indigo">
-                            Vipra Nath Patel
-                        </span>
-                    </h1>
-                    <p class="mt-4 text-sm sm:text-base md:text-lg text-slate-300 max-w-xl leading-relaxed">
-                        AI student focused on Python, backend engineering, and intelligent systems. Deputy Media Head at
-                        Alankaar BBDEG forum, bringing creative storytelling through cinematography, reels, and visual
-                        aesthetics.
-                    </p>
+                  <h4 class="text-sm font-bold text-white group-hover:text-pink-300">Instagram</h4>
+                  <p class="text-xs text-slate-400 font-mono">@vipra_28</p>
                 </div>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-pink-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+            </a>
 
-                <!-- Debugging & Passion Pill -->
-                <div
-                    class="interactive-card w-full sm:w-auto inline-flex flex-wrap items-center gap-2.5 px-4 py-2.5 rounded-xl bg-navy-900 border border-navy-800 text-xs text-slate-200">
-                    <span class="flex items-center gap-1.5 text-accent-cyan font-mono font-medium">
-                        <i data-lucide="wrench" class="w-4 h-4 text-sky-400"></i> Debugging Enthusiast
-                    </span>
-                    <span class="text-slate-600 hidden sm:inline">•</span>
-                    <span>Solving errors genuinely makes me happy</span>
-                    <span class="text-slate-600 hidden sm:inline">•</span>
-                    <span class="flex items-center gap-1 text-sky-300">
-                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Continuously Learning
-                    </span>
-                </div>
+          </div>
 
-                <!-- Call to Action Buttons -->
-                <div class="flex flex-wrap items-center gap-3.5 pt-1 w-full sm:w-auto">
-                    <a href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/edit?usp=sharing"
-                        target="_blank" rel="noopener noreferrer"
-                        class="w-full sm:w-auto px-6 py-3 rounded-lg bg-accent-cyan hover:bg-sky-300 text-navy-950 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-accent-cyan/20 hover:shadow-accent-cyan/35 hover:-translate-y-0.5">
-                        <i data-lucide="file-text" class="w-4 h-4"></i>
-                        View Resume
-                    </a>
-                    <a href="#projects"
-                        class="w-full sm:w-auto px-6 py-3 rounded-lg border border-navy-700 hover:border-accent-cyan bg-navy-900 text-slate-200 text-sm font-semibold transition-all text-center hover:-translate-y-0.5">
-                        Explore Work
-                    </a>
-                </div>
+          <!-- Secondary Links (GitHub & Email) -->
+          <div class="flex items-center gap-5 mt-4 text-slate-400 text-xs font-mono">
+            <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1.5 transition-colors">
+              <i data-lucide="github" class="w-4 h-4 text-slate-300"></i> github.com/vipra-28
+            </a>
+            <span>•</span>
+            <a href="mailto:vipranp2004@gmail.com" class="hover:text-accent-cyan flex items-center gap-1.5 transition-colors">
+              <i data-lucide="mail" class="w-4 h-4 text-slate-300"></i> vipranp2004@gmail.com
+            </a>
+          </div>
+        </div>
 
-                <!-- ============================================== -->
-                <!-- HIGHLIGHTED SOCIAL PROFILES (LINKEDIN & INSTA) -->
-                <!-- ============================================== -->
-                <div class="w-full pt-4 border-t border-navy-800/90">
-                    <span
-                        class="text-[11px] font-mono uppercase tracking-widest text-slate-400 block mb-3 font-semibold">
-                        Featured Connect:
-                    </span>
+      </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
-
-                        <!-- Highlighted LinkedIn Card -->
-                        <a href="https://www.linkedin.com/in/vipranathpatel/?isSelfProfile=true" target="_blank"
-                            rel="noopener noreferrer"
-                            class="interactive-card group p-3.5 rounded-xl bg-navy-900 border border-blue-500/30 flex items-center justify-between hover:border-sky-400 transition-all">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-[#0077b5]/20 border border-[#0077b5]/40 flex items-center justify-center text-[#0077b5] group-hover:scale-110 transition-transform">
-                                    <i data-lucide="linkedin" class="w-5 h-5 text-sky-400"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white group-hover:text-accent-cyan">LinkedIn
-                                        Profile</h4>
-                                    <p class="text-xs text-slate-400 font-mono">/in/vipranathpatel</p>
-                                </div>
-                            </div>
-                            <i data-lucide="arrow-up-right"
-                                class="w-4 h-4 text-slate-400 group-hover:text-accent-cyan transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
-                        </a>
-
-                        <!-- Highlighted Instagram Card -->
-                        <a href="https://www.instagram.com/vipra_28/" target="_blank" rel="noopener noreferrer"
-                            class="interactive-card group p-3.5 rounded-xl bg-navy-900 border border-pink-500/30 flex items-center justify-between hover:border-pink-400 transition-all">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-pink-500/20 border border-pink-500/40 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
-                                    <i data-lucide="instagram" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white group-hover:text-pink-300">Instagram Profile
-                                    </h4>
-                                    <p class="text-xs text-slate-400 font-mono">@vipra_28</p>
-                                </div>
-                            </div>
-                            <i data-lucide="arrow-up-right"
-                                class="w-4 h-4 text-slate-400 group-hover:text-pink-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
-                        </a>
-
-                    </div>
-
-                    <!-- Secondary Links (GitHub & Email) -->
-                    <div class="flex items-center gap-5 mt-4 text-slate-400 text-xs font-mono">
-                        <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-white flex items-center gap-1.5 transition-colors">
-                            <i data-lucide="github" class="w-4 h-4 text-slate-300"></i> github.com/vipra-28
-                        </a>
-                        <span>•</span>
-                        <a href="mailto:vipranp2004@gmail.com"
-                            class="hover:text-accent-cyan flex items-center gap-1.5 transition-colors">
-                            <i data-lucide="mail" class="w-4 h-4 text-slate-300"></i> vipranp2004@gmail.com
-                        </a>
-                    </div>
-                </div>
-
+      <!-- Right Column: Profile Picture Card -->
+      <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
+        <div class="relative w-full max-w-xs sm:max-w-sm">
+          
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-accent-cyan via-blue-600 to-indigo-600 opacity-30 blur-xl"></div>
+          
+          <div class="relative rounded-2xl bg-navy-900 border border-navy-700/80 overflow-hidden shadow-2xl">
+            <img 
+              src="profile.jpg.png" 
+              alt="Vipra Nath Patel" 
+              class="w-full h-auto object-cover max-h-[460px] sm:max-h-[500px] transition-transform duration-500 hover:scale-[1.02]"
+            />
+            
+            <div class="p-4 bg-navy-900/95 border-t border-navy-800 flex items-center justify-between">
+              <div>
+                <p class="font-bold text-sm text-white">Vipra Nath Patel</p>
+                <p class="text-xs text-slate-400 font-mono">B.Tech CSE (AI)</p>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-sky-950/80 text-accent-cyan border border-sky-800/60">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse"></span> Active
+              </span>
             </div>
-
-            <!-- Right Column: Profile Picture Card -->
-            <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
-                <div class="relative w-full max-w-xs sm:max-w-sm">
-
-                    <!-- Outer Soft Glow -->
-                    <div
-                        class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-accent-cyan via-blue-600 to-indigo-600 opacity-30 blur-xl">
-                    </div>
-
-                    <div class="relative rounded-2xl bg-navy-900 border border-navy-700/80 overflow-hidden shadow-2xl">
-                        <!-- Full Uncropped Picture Display -->
-                        <img src="profile.jpg.png" alt="Vipra Nath Patel"
-                            class="w-full h-auto object-cover max-h-[460px] sm:max-h-[500px] transition-transform duration-500 hover:scale-[1.02]" />
-
-                        <div class="p-4 bg-navy-900/95 border-t border-navy-800 flex items-center justify-between">
-                            <div>
-                                <p class="font-bold text-sm text-white">Vipra Nath Patel</p>
-                                <p class="text-xs text-slate-400 font-mono">B.Tech CSE (AI)</p>
-                            </div>
-                            <span
-                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono bg-sky-950/80 text-accent-cyan border border-sky-800/60">
-                                <span class="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse"></span> Active
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+          </div>
 
         </div>
-    </section>
+      </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 sm:py-20 border-t border-navy-800 bg-navy-900/30">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="max-w-2xl mb-12">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">About Me</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Academic & Personal
-                    Profile</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 sm:py-20 border-t border-navy-800 bg-navy-900/30">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">About Me</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Academic & Personal Profile</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Education -->
+        <div class="interactive-card p-6 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-lg bg-sky-950 border border-sky-800/60 flex items-center justify-center text-accent-cyan mb-4">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                <!-- Academic Profile -->
-                <div
-                    class="interactive-card p-6 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
-                    <div>
-                        <div
-                            class="w-11 h-11 rounded-lg bg-sky-950 border border-sky-800/60 flex items-center justify-center text-accent-cyan mb-4">
-                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 transition-colors">Education</h3>
-                        <p class="text-sm font-mono text-accent-cyan mb-3">B.Tech CSE (AI) - 3rd Year</p>
-                        <p class="text-sm text-slate-300 leading-relaxed transition-colors">
-                            Undergraduate at Babu Banarasi Das University, specializing in Artificial Intelligence and
-                            computational systems.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Debugging & Learning Passion -->
-                <div
-                    class="interactive-card p-6 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
-                    <div>
-                        <div
-                            class="w-11 h-11 rounded-lg bg-sky-950 border border-sky-800/60 flex items-center justify-center text-accent-cyan mb-4">
-                            <i data-lucide="terminal-square" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 transition-colors">Problem Solver</h3>
-                        <p class="text-sm font-mono text-accent-cyan mb-3">Debugging & Logic</p>
-                        <p class="text-sm text-slate-300 leading-relaxed transition-colors">
-                            Finding bugs and resolving errors brings genuine satisfaction. Driven by a constant desire
-                            to learn emerging technologies and apply them practically.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Media & Interests -->
-                <div
-                    class="interactive-card p-6 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
-                    <div>
-                        <div
-                            class="w-11 h-11 rounded-lg bg-indigo-950 border border-indigo-800/60 flex items-center justify-center text-indigo-400 mb-4">
-                            <i data-lucide="film" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-1 transition-colors">Creative & Anime</h3>
-                        <p class="text-sm font-mono text-indigo-300 mb-3">Visuals & Storytelling</p>
-                        <p class="text-sm text-slate-300 leading-relaxed transition-colors">
-                            Passionate about photography, cinematography, and short-form video production. When not
-                            coding or filming, I am an enthusiastic anime watcher.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
+            <h3 class="text-lg font-bold text-white mb-1 transition-colors">Education</h3>
+            <p class="text-sm font-mono text-accent-cyan mb-3">B.Tech CSE (AI) - 3rd Year</p>
+            <p class="text-sm text-slate-300 leading-relaxed transition-colors">
+              Undergraduate at Babu Banarasi Das University, specializing in Artificial Intelligence and computational systems.
+            </p>
+          </div>
         </div>
-    </section>
 
-    <!-- Technical Stack Section -->
-    <section id="skills" class="py-16 sm:py-20 border-t border-navy-800">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="max-w-2xl mb-12">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Skills & Frameworks
-                </h2>
-                <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Tech Stack</p>
+        <!-- Problem Solver -->
+        <div class="interactive-card p-6 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-lg bg-sky-950 border border-sky-800/60 flex items-center justify-center text-accent-cyan mb-4">
+              <i data-lucide="terminal-square" class="w-5 h-5"></i>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <!-- Primary Focus -->
-                <div
-                    class="interactive-card p-6 sm:p-7 rounded-xl bg-navy-900 border border-navy-800 relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 px-3 py-1 bg-accent-cyan/10 border-b border-l border-accent-cyan/20 text-accent-cyan text-[11px] font-mono uppercase tracking-wider font-semibold">
-                        Core Specialization
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2 transition-colors">
-                        <i data-lucide="code" class="w-5 h-5 text-accent-cyan"></i> Primary Language
-                    </h3>
-                    <p class="text-sm text-slate-300 mb-6 transition-colors">Utilized for machine learning models,
-                        computational algorithms, and backend services.</p>
-
-                    <div class="flex items-center gap-4 p-4 rounded-lg bg-navy-950 border border-navy-800">
-                        <div
-                            class="w-12 h-12 rounded-lg bg-accent-cyan/15 flex items-center justify-center text-accent-cyan font-mono text-xl font-extrabold border border-accent-cyan/30">
-                            Py
-                        </div>
-                        <div>
-                            <p class="font-bold text-white text-lg">Python</p>
-                            <p class="text-xs text-slate-400">AI / ML • Data Structures • Backend Development</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secondary Technologies -->
-                <div class="interactive-card p-6 sm:p-7 rounded-xl bg-navy-900 border border-navy-800">
-                    <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2 transition-colors">
-                        <i data-lucide="layers" class="w-5 h-5 text-accent-cyan"></i> Secondary Technologies
-                    </h3>
-                    <p class="text-sm text-slate-300 mb-6 transition-colors">Languages, frameworks, and data platforms
-                        used across full-stack and systems work.</p>
-
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-
-                        <div class="interactive-card p-3 rounded-lg bg-navy-950 border border-navy-800 text-center">
-                            <span class="block text-sm font-bold text-slate-100">FastAPI</span>
-                            <span class="text-[11px] font-mono text-slate-400">Backend</span>
-                        </div>
-
-                        <div class="interactive-card p-3 rounded-lg bg-navy-950 border border-navy-800 text-center">
-                            <span class="block text-sm font-bold text-slate-100">MySQL</span>
-                            <span class="text-[11px] font-mono text-slate-400">Database</span>
-                        </div>
-
-                        <div class="interactive-card p-3 rounded-lg bg-navy-950 border border-navy-800 text-center">
-                            <span class="block text-sm font-bold text-slate-100">C</span>
-                            <span class="text-[11px] font-mono text-slate-400">System</span>
-                        </div>
-
-                        <div class="interactive-card p-3 rounded-lg bg-navy-950 border border-navy-800 text-center">
-                            <span class="block text-sm font-bold text-slate-100">HTML</span>
-                            <span class="text-[11px] font-mono text-slate-400">Frontend</span>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
+            <h3 class="text-lg font-bold text-white mb-1 transition-colors">Problem Solver</h3>
+            <p class="text-sm font-mono text-accent-cyan mb-3">Debugging & Logic</p>
+            <p class="text-sm text-slate-300 leading-relaxed transition-colors">
+              Finding bugs and resolving errors brings genuine satisfaction. Driven by a constant desire to learn emerging technologies and apply them practically.
+            </p>
+          </div>
         </div>
-    </section>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" class="py-16 sm:py-20 border-t border-navy-800 bg-navy-900/30">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="max-w-2xl mb-12">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Showcase</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Featured Projects</p>
+        <!-- Creative & Anime -->
+        <div class="interactive-card p-6 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-lg bg-indigo-950 border border-indigo-800/60 flex items-center justify-center text-indigo-400 mb-4">
+              <i data-lucide="film" class="w-5 h-5"></i>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <!-- Chatbot Project -->
-                <div
-                    class="interactive-card p-6 sm:p-7 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div
-                                class="w-11 h-11 rounded-lg bg-sky-950 border border-sky-800/60 flex items-center justify-center text-accent-cyan">
-                                <i data-lucide="bot" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xs font-mono text-slate-400">Python • FastAPI • MySQL</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 transition-colors">Intelligent Conversational
-                            Chatbot</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4 transition-colors">
-                            Engineered a responsive conversational chatbot backend using Python and FastAPI. Features
-                            structured intent recognition, context management, and persistent chat logs in MySQL.
-                        </p>
-                    </div>
-                    <div
-                        class="pt-4 border-t border-navy-800 flex items-center justify-between text-xs font-mono text-accent-cyan">
-                        <span>Conversational AI</span>
-                        <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer"
-                            class="hover:underline flex items-center gap-1 font-semibold">
-                            Repository <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- AI Infrastructure Health Monitoring System -->
-                <div
-                    class="interactive-card p-6 sm:p-7 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div
-                                class="w-11 h-11 rounded-lg bg-blue-950 border border-blue-800/60 flex items-center justify-center text-accent-blue">
-                                <i data-lucide="activity" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xs font-mono text-slate-400">Python • AI / ML</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 transition-colors">AI Infrastructure Health
-                            Monitoring</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4 transition-colors">
-                            Designed an automated framework for real-time structural health monitoring and anomaly
-                            detection using Python-based data pipelines and predictive modeling.
-                        </p>
-                    </div>
-                    <div
-                        class="pt-4 border-t border-navy-800 flex items-center justify-between text-xs font-mono text-accent-cyan">
-                        <span>Machine Learning</span>
-                        <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer"
-                            class="hover:underline flex items-center gap-1 font-semibold">
-                            Repository <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+            <h3 class="text-lg font-bold text-white mb-1 transition-colors">Creative & Anime</h3>
+            <p class="text-sm font-mono text-indigo-300 mb-3">Visuals & Storytelling</p>
+            <p class="text-sm text-slate-300 leading-relaxed transition-colors">
+              Passionate about photography, cinematography, and short-form video production. When not coding or filming, I am an enthusiastic anime watcher.
+            </p>
+          </div>
         </div>
-    </section>
 
-    <!-- Media Leadership & Creative Experience -->
-    <section id="leadership" class="py-16 sm:py-20 border-t border-navy-800">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="max-w-2xl mb-12">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Creative & Roles</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Media Leadership</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Stack Section -->
+  <section id="skills" class="py-16 sm:py-20 border-t border-navy-800">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Skills & Frameworks</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Tech Stack</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Primary Focus -->
+        <div class="interactive-card p-6 sm:p-7 rounded-xl bg-navy-900 border border-navy-800 relative overflow-hidden">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-accent-cyan/10 border-b border-l border-accent-cyan/20 text-accent-cyan text-[11px] font-mono uppercase tracking-wider font-semibold">
+            Core Specialization
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2 transition-colors">
+            <i data-lucide="code" class="w-5 h-5 text-accent-cyan"></i> Primary Language
+          </h3>
+          <p class="text-sm text-slate-300 mb-6 transition-colors">Utilized for machine learning models, computational algorithms, and backend services.</p>
+          
+          <div class="flex items-center gap-4 p-4 rounded-lg bg-navy-950 border border-navy-800">
+            <div class="w-12 h-12 rounded-lg bg-accent-cyan/15 flex items-center justify-center text-accent-cyan font-mono text-xl font-extrabold border border-accent-cyan/30">
+              Py
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-
-                <!-- Alankaar Position Card -->
-                <div class="interactive-card p-6 sm:p-8 rounded-xl bg-navy-900 border border-navy-800 relative">
-                    <div class="flex items-start justify-between gap-4 mb-4">
-                        <div>
-                            <span
-                                class="inline-block px-2.5 py-1 rounded bg-sky-950 text-accent-cyan text-xs font-mono font-semibold mb-2 border border-sky-800/60">
-                                Forum Leadership
-                            </span>
-                            <h3 class="text-xl font-bold text-white transition-colors">Deputy Media Head</h3>
-                            <p class="text-sm font-medium text-slate-300">Alankaar BBDEG Forum</p>
-                        </div>
-                        <div class="p-3 rounded-lg bg-navy-950 border border-navy-800 text-accent-cyan">
-                            <i data-lucide="video" class="w-6 h-6"></i>
-                        </div>
-                    </div>
-                    <p class="text-sm text-slate-300 leading-relaxed mb-6 transition-colors">
-                        Overseeing multimedia initiatives, campus coverage, cinematography, and creative design
-                        direction for the Alankaar forum across university events.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
-                        <span class="px-2.5 py-1 rounded bg-navy-950 border border-navy-800">Visual Direction</span>
-                        <span class="px-2.5 py-1 rounded bg-navy-950 border border-navy-800">Event Production</span>
-                        <span class="px-2.5 py-1 rounded bg-navy-950 border border-navy-800">Team Coordination</span>
-                    </div>
-                </div>
-
-                <!-- Creative Toolkit & Hobbies -->
-                <div class="space-y-4">
-
-                    <div
-                        class="interactive-card p-5 rounded-xl bg-navy-900 border border-navy-800 flex items-start gap-4">
-                        <div class="p-2.5 rounded-lg bg-sky-950 text-accent-cyan border border-sky-800/60 mt-0.5">
-                            <i data-lucide="camera" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-base transition-colors">Photography & Cinematography
-                            </h4>
-                            <p class="text-xs text-slate-300 mt-1 transition-colors">Dynamic framing, lighting
-                                composition, camera operations, and story-driven reel production.</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="interactive-card p-5 rounded-xl bg-navy-900 border border-navy-800 flex items-start gap-4">
-                        <div class="p-2.5 rounded-lg bg-indigo-950 text-indigo-400 border border-indigo-800/60 mt-0.5">
-                            <i data-lucide="palette" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-base transition-colors">Canva & Visual Design</h4>
-                            <p class="text-xs text-slate-300 mt-1 transition-colors">Experienced in creating modern
-                                social banners, promotional posters, and branding collateral.</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="interactive-card p-5 rounded-xl bg-navy-900 border border-navy-800 flex items-start gap-4">
-                        <div class="p-2.5 rounded-lg bg-blue-950 text-sky-400 border border-blue-800/60 mt-0.5">
-                            <i data-lucide="clapperboard" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-base transition-colors">Reels & Content Pacing</h4>
-                            <p class="text-xs text-slate-300 mt-1 transition-colors">High-energy edits, beat-matched
-                                cuts, and mobile-optimized video workflows.</p>
-                        </div>
-                    </div>
-
-                </div>
-
+            <div>
+              <p class="font-bold text-white text-lg">Python</p>
+              <p class="text-xs text-slate-400">AI / ML • Data Structures • Backend Development</p>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="py-16 sm:py-20 border-t border-navy-800 bg-navy-900/30">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8">
-            <div class="max-w-2xl mb-12">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Qualifications</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Curriculum Vitae / Resume
-                </p>
+        <!-- Secondary Technologies -->
+        <div class="interactive-card p-6 sm:p-7 rounded-xl bg-navy-900 border border-navy-800">
+          <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2 transition-colors">
+            <i data-lucide="layers" class="w-5 h-5 text-accent-cyan"></i> Secondary Technologies
+          </h3>
+          <p class="text-sm text-slate-300 mb-6 transition-colors">Languages, frameworks, and data platforms used across full-stack and systems work.</p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            
+            <div class="interactive-card p-3 rounded-lg bg-navy-950 border border-navy-800 text-center">
+              <span class="block text-sm font-bold text-slate-100">FastAPI</span>
+              <span class="text-[11px] font-mono text-slate-400">Backend</span>
             </div>
 
-            <div
-                class="interactive-card p-6 sm:p-8 rounded-2xl bg-navy-900 border border-navy-800 relative overflow-hidden">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-
-                    <div class="lg:col-span-8 space-y-4">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 rounded bg-sky-950 text-accent-cyan text-xs font-mono font-medium border border-sky-800/60">
-                            <i data-lucide="cloud" class="w-3.5 h-3.5"></i> Live Cloud Synchronized
-                        </div>
-                        <h3 class="text-2xl font-bold text-white transition-colors">Vipra Nath Patel — Resume</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed max-w-xl transition-colors">
-                            Academic credentials in B.Tech CSE (AI), technical stack experience (Python, FastAPI, MySQL,
-                            C, HTML), Chatbot & AI projects, and media leadership.
-                        </p>
-
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <!-- View Live Google Doc -->
-                            <a href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/edit?usp=sharing"
-                                target="_blank" rel="noopener noreferrer"
-                                class="px-5 py-2.5 rounded-lg border border-navy-700 hover:border-accent-cyan bg-navy-950 text-slate-200 font-semibold text-xs uppercase tracking-wider flex items-center gap-2 transition-all hover:-translate-y-0.5">
-                                <i data-lucide="external-link" class="w-4 h-4 text-accent-cyan"></i> View Resume (Always
-                                Updated)
-                            </a>
-
-                            <!-- Direct PDF Download from Google Drive -->
-                            <a href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/export?format=pdf"
-                                target="_blank"
-                                class="px-5 py-2.5 rounded-lg bg-accent-cyan hover:bg-sky-300 text-navy-950 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shadow-accent-cyan/20 hover:shadow-accent-cyan/35 hover:-translate-y-0.5">
-                                <i data-lucide="download" class="w-4 h-4"></i> Download PDF
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-4 flex justify-center">
-                        <div
-                            class="w-52 p-5 rounded-xl bg-navy-950 border border-navy-800 flex flex-col items-center text-center shadow-lg">
-                            <div
-                                class="w-14 h-14 rounded-full bg-sky-950 border border-sky-800/60 text-accent-cyan flex items-center justify-center mb-3">
-                                <i data-lucide="file-check-2" class="w-7 h-7"></i>
-                            </div>
-                            <p class="font-bold text-white text-sm">Cloud Document</p>
-                            <p class="text-[11px] font-mono text-slate-400 mt-0.5">Real-time sync</p>
-                            <span class="mt-3 text-[10px] text-slate-500 border-t border-navy-800 pt-2 w-full">Automatic
-                                latest version</span>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="interactive-card p-3 rounded-lg bg-navy-950 border border-navy-800 text-center">
+              <span class="block text-sm font-bold text-slate-100">MySQL</span>
+              <span class="text-[11px] font-mono text-slate-400">Database</span>
             </div>
+
+            <div class="interactive-card p-3 rounded-lg bg-navy-950 border border-navy-800 text-center">
+              <span class="block text-sm font-bold text-slate-100">C</span>
+              <span class="text-[11px] font-mono text-slate-400">System</span>
+            </div>
+
+            <div class="interactive-card p-3 rounded-lg bg-navy-950 border border-navy-800 text-center">
+              <span class="block text-sm font-bold text-slate-100">HTML</span>
+              <span class="text-[11px] font-mono text-slate-400">Frontend</span>
+            </div>
+
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 sm:py-20 border-t border-navy-800">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 text-center">
-            <div class="max-w-xl mx-auto mb-10">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Get In Touch</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Connect Directly</p>
-                <p class="text-sm text-slate-300 mt-3">
-                    Open to software development opportunities, AI projects, and creative multimedia collaborations.
-                </p>
-            </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                <a href="mailto:vipranp2004@gmail.com"
-                    class="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-accent-cyan hover:bg-sky-300 text-navy-950 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-accent-cyan/20 hover:shadow-accent-cyan/35 hover:-translate-y-0.5">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    vipranp2004@gmail.com
-                </a>
-            </div>
+  <!-- Featured Projects Section -->
+  <section id="projects" class="py-16 sm:py-20 border-t border-navy-800 bg-navy-900/30">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Showcase</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Featured Projects</p>
+      </div>
 
-            <!-- Footer Social Links -->
-            <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-slate-400">
-                <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer"
-                    class="hover:text-white transition-colors flex items-center gap-2 text-xs font-mono">
-                    <i data-lucide="github" class="w-4 h-4 text-slate-300"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/vipranathpatel/?isSelfProfile=true" target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:text-sky-400 transition-colors flex items-center gap-2 text-xs font-mono">
-                    <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i> LinkedIn
-                </a>
-                <a href="https://www.instagram.com/vipra_28/" target="_blank" rel="noopener noreferrer"
-                    class="hover:text-pink-400 transition-colors flex items-center gap-2 text-xs font-mono">
-                    <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i> Instagram
-                </a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Chatbot Project -->
+        <div class="interactive-card p-6 sm:p-7 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-11 h-11 rounded-lg bg-sky-950 border border-sky-800/60 flex items-center justify-center text-accent-cyan">
+                <i data-lucide="bot" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Python • FastAPI • MySQL</span>
             </div>
+            <h3 class="text-xl font-bold text-white mb-2 transition-colors">Intelligent Conversational Chatbot</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4 transition-colors">
+              Engineered a responsive conversational chatbot backend using Python and FastAPI. Features structured intent recognition, context management, and persistent chat logs in MySQL.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-navy-800 flex items-center justify-between text-xs font-mono text-accent-cyan">
+            <span>Conversational AI</span>
+            <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1 font-semibold">
+              Repository <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-8 border-t border-navy-800 text-center text-xs font-mono text-slate-500">
-        <p>© <span id="year"></span> Vipra Nath Patel. Built for performance and clarity.</p>
-    </footer>
+        <!-- AI Infrastructure Health Monitoring System -->
+        <div class="interactive-card p-6 sm:p-7 rounded-xl bg-navy-900 border border-navy-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-11 h-11 rounded-lg bg-blue-950 border border-blue-800/60 flex items-center justify-center text-accent-blue">
+                <i data-lucide="activity" class="w-6 h-6"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Python • AI / ML</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 transition-colors">AI Infrastructure Health Monitoring</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4 transition-colors">
+              Designed an automated framework for real-time structural health monitoring and anomaly detection using Python-based data pipelines and predictive modeling.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-navy-800 flex items-center justify-between text-xs font-mono text-accent-cyan">
+            <span>Machine Learning</span>
+            <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1 font-semibold">
+              Repository <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
 
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+      </div>
+    </div>
+  </section>
 
-        // Auto-update year
-        document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Media Leadership & Creative Experience -->
+  <section id="leadership" class="py-16 sm:py-20 border-t border-navy-800">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Creative & Roles</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Media Leadership</p>
+      </div>
 
-        // Responsive Mobile Menu Drawer Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        
+        <!-- Alankaar Position Card -->
+        <div class="interactive-card p-6 sm:p-8 rounded-xl bg-navy-900 border border-navy-800 relative">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded bg-sky-950 text-accent-cyan text-xs font-mono font-semibold mb-2 border border-sky-800/60">
+                Forum Leadership
+              </span>
+              <h3 class="text-xl font-bold text-white transition-colors">Deputy Media Head</h3>
+              <p class="text-sm font-medium text-slate-300">Alankaar BBDEG Forum</p>
+            </div>
+            <div class="p-3 rounded-lg bg-navy-950 border border-navy-800 text-accent-cyan">
+              <i data-lucide="video" class="w-6 h-6"></i>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-6 transition-colors">
+            Overseeing multimedia initiatives, campus coverage, cinematography, and creative design direction for the Alankaar forum across university events.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+            <span class="px-2.5 py-1 rounded bg-navy-950 border border-navy-800">Visual Direction</span>
+            <span class="px-2.5 py-1 rounded bg-navy-950 border border-navy-800">Event Production</span>
+            <span class="px-2.5 py-1 rounded bg-navy-950 border border-navy-800">Team Coordination</span>
+          </div>
+        </div>
 
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-        }
-    </script>
+        <!-- Creative Toolkit & Hobbies -->
+        <div class="space-y-4">
+          
+          <div class="interactive-card p-5 rounded-xl bg-navy-900 border border-navy-800 flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-sky-950 text-accent-cyan border border-sky-800/60 mt-0.5">
+              <i data-lucide="camera" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-base transition-colors">Photography & Cinematography</h4>
+              <p class="text-xs text-slate-300 mt-1 transition-colors">Dynamic framing, lighting composition, camera operations, and story-driven reel production.</p>
+            </div>
+          </div>
+
+          <div class="interactive-card p-5 rounded-xl bg-navy-900 border border-navy-800 flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-indigo-950 text-indigo-400 border border-indigo-800/60 mt-0.5">
+              <i data-lucide="palette" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-base transition-colors">Canva & Visual Design</h4>
+              <p class="text-xs text-slate-300 mt-1 transition-colors">Experienced in creating modern social banners, promotional posters, and branding collateral.</p>
+            </div>
+          </div>
+
+          <div class="interactive-card p-5 rounded-xl bg-navy-900 border border-navy-800 flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-blue-950 text-sky-400 border border-blue-800/60 mt-0.5">
+              <i data-lucide="clapperboard" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-base transition-colors">Reels & Content Pacing</h4>
+              <p class="text-xs text-slate-300 mt-1 transition-colors">High-energy edits, beat-matched cuts, and mobile-optimized video workflows.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="py-16 sm:py-20 border-t border-navy-800 bg-navy-900/30">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Qualifications</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Curriculum Vitae / Resume</p>
+      </div>
+
+      <div class="interactive-card p-6 sm:p-8 rounded-2xl bg-navy-900 border border-navy-800 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-8 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-sky-950 text-accent-cyan text-xs font-mono font-medium border border-sky-800/60">
+              <i data-lucide="cloud" class="w-3.5 h-3.5"></i> Live Cloud Synchronized
+            </div>
+            <h3 class="text-2xl font-bold text-white transition-colors">Vipra Nath Patel — Resume</h3>
+            <p class="text-sm text-slate-300 leading-relaxed max-w-xl transition-colors">
+              Academic credentials in B.Tech CSE (AI), technical stack experience (Python, FastAPI, MySQL, C, HTML), Chatbot & AI projects, and media leadership.
+            </p>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a 
+                href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/edit?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="px-5 py-2.5 rounded-lg border border-navy-700 hover:border-accent-cyan bg-navy-950 text-slate-200 font-semibold text-xs uppercase tracking-wider flex items-center gap-2 transition-all hover:-translate-y-0.5">
+                <i data-lucide="external-link" class="w-4 h-4 text-accent-cyan"></i> View Resume (Always Updated)
+              </a>
+
+              <a 
+                href="https://docs.google.com/document/d/18ODPDXCzH0RCEYAhQSra6qtbLG2biTumLnGS2XBmiLk/export?format=pdf" 
+                target="_blank" 
+                class="px-5 py-2.5 rounded-lg bg-accent-cyan hover:bg-sky-300 text-navy-950 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shadow-accent-cyan/20 hover:shadow-accent-cyan/35 hover:-translate-y-0.5">
+                <i data-lucide="download" class="w-4 h-4"></i> Download PDF
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 flex justify-center">
+            <div class="w-52 p-5 rounded-xl bg-navy-950 border border-navy-800 flex flex-col items-center text-center shadow-lg">
+              <div class="w-14 h-14 rounded-full bg-sky-950 border border-sky-800/60 text-accent-cyan flex items-center justify-center mb-3">
+                <i data-lucide="file-check-2" class="w-7 h-7"></i>
+              </div>
+              <p class="font-bold text-white text-sm">Cloud Document</p>
+              <p class="text-[11px] font-mono text-slate-400 mt-0.5">Real-time sync</p>
+              <span class="mt-3 text-[10px] text-slate-500 border-t border-navy-800 pt-2 w-full">Automatic latest version</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 sm:py-20 border-t border-navy-800">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 text-center">
+      <div class="max-w-xl mx-auto mb-10">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-accent-cyan font-bold">Get In Touch</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Connect Directly</p>
+        <p class="text-sm text-slate-300 mt-3">
+          Open to software development opportunities, AI projects, and creative multimedia collaborations.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a 
+          href="mailto:vipranp2004@gmail.com" 
+          class="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-accent-cyan hover:bg-sky-300 text-navy-950 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-accent-cyan/20 hover:shadow-accent-cyan/35 hover:-translate-y-0.5">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          vipranp2004@gmail.com
+        </a>
+      </div>
+
+      <!-- Footer Social Links -->
+      <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-slate-400">
+        <a href="https://github.com/vipra-28" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2 text-xs font-mono">
+          <i data-lucide="github" class="w-4 h-4 text-slate-300"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/vipranathpatel/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors flex items-center gap-2 text-xs font-mono">
+          <svg class="w-4 h-4 fill-[#0A66C2]" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> LinkedIn
+        </a>
+        <a href="https://www.instagram.com/vipra_28/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors flex items-center gap-2 text-xs font-mono">
+          <svg class="w-4 h-4 fill-[#E1306C]" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-navy-800 text-center text-xs font-mono text-slate-500">
+    <p>© <span id="year"></span> Vipra Nath Patel. Built for performance and clarity.</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
 </body>
 </html>
